@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Information</h1>
+
+ 
+<div class="table-responsive">  
+  <table class="table align-middle table-warning table-bordered table-striped" style="text-align: center;">
+    <thead>
+      <tr class="table-primary align-middle">
+        <th>ID</th>
+        <th>Tên BN  </th>
+        <th>Thông tin</th>
+        <th>Địa chỉ</th>
+        <th>Thông tin dịch tễ</th>
+        <th>Tình trạng</th>
+        <th>Nguồn lây</th>
+        <th>Bản tin</th>
+        <th>Ngày công bố</th>
+        <th>Quận/huyện</th>
+        <th>Tỉnh/thành</th>
+        <th>Năm sinh</th>
+        <th colspan="3">Hành động</th>
+      </tr>
+    </thead>
+
+    <tbody>
+   
+    <%= form_tag(information_index_path, method: :get) do %>
+      <div class="mb-3">
+        <label class="form-label">Name:</label>
+        <%= text_field_tag :name, params[:name] %>
+      </div>
+
+      <div class="mb-3"> 
+        <label class="form-label">Address:</label>
+        <%= text_field_tag :address, params[:address] %>
+      </div>
+      <div class="mb-3">
+        <%= submit_tag 'Search', name: nil, class: 'btn btn-secondary'%>
+        <%= link_to 'New Information', new_information_path, class: 'btn btn-success'%>
+      </div>
+    <% end %>
+      <% @information.each do |information| %>
+        <tr>
+          <td><%= information.id %></td>
+          <td><%= information.name %></td>
+          <td><%= information.infor %></td>
+          <td><%= information.address %></td>
+          <td><%= truncate(information.info, length: 150) %></td>
+          <td><%= information.status %></td>
+          <td><%= information.infection %></td>
+          <td><%= information.news %></td>
+          <td><%= information.publication %></td>
+          <td><%= information.district %></td>
+          <td><%= information.province %></td>
+          <td><%= information.yob %></td>
+          <td><%= link_to 'Show', information, class: 'btn btn-primary' %></td>
+          <td><%= link_to 'Edit', edit_information_path(information), class: 'btn btn-warning' %></td>
+          <td><%= link_to 'Destroy', information, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
+
+<br>
+
+

@@ -1,0 +1,72 @@
+<%= form_with(model: information) do |form| %>
+  <% if information.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(information.errors.count, "error") %> prohibited this information from being saved:</h2>
+
+      <ul>
+        <% information.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label "Tên bệnh nhân:" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Thông tin:" %>
+    <%= form.text_field :infor %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Địa chỉ:" %>
+    <%= form.text_area :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Thông tin dịch tễ:" %>
+    <%= form.text_field :info %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Trạng thái:" %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Nguồn lây:" %>
+    <%= form.text_field :infection %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Bản tin:"%>
+    <%= form.text_field :news %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Ngày công bố:" %>
+    <%= form.text_field :publication %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Quận/huyện:" %>
+    <%= form.text_field :district %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Tỉnh/thành:" %>
+    <%= form.text_field :province %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Năm sinh:" %>
+    <%= form.text_field :yob %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

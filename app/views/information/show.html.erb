@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tên BN:</strong>
+  <%= @information.name %>
+</p>
+
+<p>
+  <strong>Thông tin:</strong>
+  <%= @information.infor %>
+</p>
+
+<p>
+  <strong>Địa chỉ:</strong>
+  <%= @information.address %>
+</p>
+
+<p>
+  <strong>Thông tin dịch tễ:</strong>
+  <%= @information.info %>
+</p>
+
+<p>
+  <strong>Tình trạng:</strong>
+  <%= @information.status %>
+</p>
+
+<p>
+  <strong>Nguồn lây:</strong>
+  <%= @information.infection %>
+</p>
+
+<p>
+  <strong>Bản tin:</strong>
+  <%= @information.news %>
+</p>
+
+<p>
+  <strong>Ngày công bố:</strong>
+  <%= @information.publication %>
+</p>
+
+<p>
+  <strong>Quận/huyện:</strong>
+  <%= @information.district %>
+</p>
+
+<p>
+  <strong>Tỉnh/thành:</strong>
+  <%= @information.province %>
+</p>
+
+<p>
+  <strong>Năm sinh:</strong>
+  <%= @information.yob %>
+</p>
+
+<%= link_to 'Edit', edit_information_path(@information) %> |
+<%= link_to 'Back', information_index_path %>
